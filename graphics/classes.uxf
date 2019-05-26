@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>30</y>
+      <w>100</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Player
+-
+void main()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>110</x>
+      <y>120</y>
+      <w>210</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>Game
+-
+List&lt;Unit&gt; units
+List&lt;Building&gt; buildings
+int gold
+int income
+List&lt;Command&gt; output
+-
+Game()
+void init(Scanner)
+void update(Scanner)
+void buildOutput()
+void trainUnits()
+void moveUnits()
+Position findTrainingPosition()
+void output()
+void debug()
+Building getHQ()
+Building getOpponentHQ()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>510</x>
+      <y>30</y>
+      <w>310</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>Command
+-
+CommandType t
+Possition p
+int idOrLevel
+String msg
+-
+Command(CommandType, Position, int)
+Command(CommandType, Position, int, String)
+String get()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>310</x>
+      <y>100</y>
+      <w>220</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>200.0;10.0;110.0;10.0;110.0;90.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>200</x>
+      <y>70</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>600</x>
+      <y>340</y>
+      <w>120</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Position
+-
+int x
+int y
+-
+Position(int, int)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>170</y>
+      <w>30</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;170.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>520</y>
+      <w>170</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>Unit
+-
+Position p
+int level
+int owner
+int id
+-
+Unit(x, y, level, owner, id)
+void debug()
+boolean isOwned()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>80</x>
+      <y>410</y>
+      <w>150</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;70.0;130.0;70.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>70</x>
+      <y>420</y>
+      <w>620</w>
+      <h>330</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>600.0;10.0;600.0;310.0;10.0;310.0;10.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>220</x>
+      <y>520</y>
+      <w>230</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>Building
+-
+Position p
+BuildingType t
+int owner
+-
+Building(int x, int y, int t, int owner)
+void debug()
+boolean isHQ()
+boolean isOwned()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>200</x>
+      <y>400</y>
+      <w>180</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>140.0;120.0;140.0;80.0;10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>440</x>
+      <y>380</y>
+      <w>180</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>160.0;10.0;100.0;10.0;100.0;220.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>250</x>
+      <y>790</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>BuildingType
+-
+HQ
+-
+BuildingType get(int)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>660</y>
+      <w>30</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>750</x>
+      <y>350</y>
+      <w>120</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>CommandType
+-
+MOVE
+TRAIN</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>790</x>
+      <y>170</y>
+      <w>30</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
